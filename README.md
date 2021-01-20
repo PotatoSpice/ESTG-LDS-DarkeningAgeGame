@@ -1,20 +1,63 @@
-# Retirado da Wiki | [Organização do Repositório](https://gitlab.estg.ipp.pt/lds-group-15/darkening-age/wikis/Configura%C3%A7%C3%A3o-do-Reposit%C3%B3rio)
+<p align="center">
+  <h1 align="center">ESTG-LDS 2020/2021 | Darkening Age</h1>
+  
+  <p align="center">
+    Projeto desenvolvimento para a UC de Laboratório de Desenvolvimento de Software, ano letivo 2020/2021.
+    <br/>
+    Um simples *multiplayer Real Time Stategy game* onde quatro jogadores competem numa espécie de tabuleiro 2D, cada um rivalizando para estabelecer dominância sobre os outros.
+  </p>
+</p>
 
-- Visto no diagrama abaixo e tendo em conta que o projeto está desenvolvido num repositório único, existirá para cada componente do projeto um GIT [Orphan Branches](https://www.git-scm.com/docs/git-checkout#Documentation/git-checkout.txt---orphanltnewbranchgt). 
-- Isto é, existirá um branch para desenvolvimento do serviço web, outro para o cliente web no browser, outro para o cliente desktop no Unity e outro para o servidor dedicado do jogo. Igualmente, para cada componente existe um branch de *deploy* e outro para *development*, para 
-- Resumidamente, todo o código deverá ser construido nos últimos e depois incluido no branch de *development* através de *merge requests*. O mesmo deverá acontecer entre os branches de *deploy* e *development* para os momentos de delivery do projeto.
+<p align="center">
+  <a href="https://github.com/PotatoSpice/ESTG-LDS-DarkeningAgeGame">
+    <img src="https://user-images.githubusercontent.com/44165718/105226974-9cbfd780-5b58-11eb-99dd-29e7ae8dc64b.png" alt="Logo" width="165" height="158">
+  </a>
+  
+  <p align="center">
+    <a href="https://github.com/PotatoSpice/ESTG-LDS-DarkeningAgeGame/wiki">Check Wiki</a>
+    ·
+    <a href="https://github.com/PotatoSpice/ESTG-LDS-DarkeningAgeGame/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/PotatoSpice/ESTG-LDS-DarkeningAgeGame/issues">Request Feature</a>
+  </p>
+  <br/>
+  <br/>
+</p>
 
-![branch_organization](/uploads/82d6711b37e6a3618a9755b86eca6522/branch_organization.jpg)
+# Organização do Repositório
 
-# Práticas para organização de *Commits*
+- Visto no diagrama abaixo e tendo em conta que as várias aplicações desenvolvidas estão num repositório único, existirá para cada componente do projeto um GIT [Orphan Branche](https://www.git-scm.com/docs/git-checkout#Documentation/git-checkout.txt---orphanltnewbranchgt). 
 
-Para cada commit, normalmente, a descrição deverá começar com pelo menos uma das *tags* seguintes:
+- Isto é, existe um branch para a API, para o *Game Client* no browser, para a GUI do jogo em Unity e outro para o servidor dedicado do jogo.
 
-- feature (código novo, nova funcionalidade);
-- refactor (correções pontuais de código, entre commits);
-- hotfix (correções de maior escala para problemas em específico, entre merge-requests);
-- docs (atualização de documentação do código);
+- Por sua vez, o *master branch* contém cada uma das aplicações, em princípio, com a versão mais atualizada sobre o *deployment*. Contudo, não chegou a realizar-se nenhum *deploy* das aplicações durante o projeto.
 
-# CI & CD
+![repo_organization](https://user-images.githubusercontent.com/44165718/105228731-d42f8380-5b5a-11eb-8c93-5df87addd30a.jpg)
 
-Atualmente, o CI encontra-se com problemas de *back office*. No entanto, os ficheiros *.gitlab-ci.yml* já estão configurados e adicionados aos repositórios.
+# Tecnologias
+
+### *Game Server*
+*TO BE ADDED*
+
+### *Game API*
+*TO BE ADDED*
+
+### *Game Client*
+*TO BE ADDED*
+
+### *Game GUI*
+*TO BE ADDED*
+
+# Setup
+
+### *Game Server*
+*TO BE ADDED*
+
+### *Game API*
+*TO BE ADDED*
+
+### *Game Client*
+*TO BE ADDED*
+
+### *Game GUI*
+*TO BE ADDED*
