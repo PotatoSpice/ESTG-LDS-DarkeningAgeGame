@@ -1,0 +1,162 @@
+<div class="container-fluid"><div class="row"><div class="col-12 col-md-10 col-lg-8 offset-md-1 offset-lg-2">
+    <div class="card" style="background-color: rgba(248, 248, 248, 0.75)">
+        <div class="card-body px-5 pt-5 pb-0">
+            <h1 class="text-center">Sign Up</h1>
+            <hr class="colorgraph">
+
+            <form #signUpForm="ngForm" appConfirmPassword (ngSubmit)="signUpForm.form.valid && signUp(signUpForm)">
+                <div class="form-row"><div class="col-xs-12 col-md-10 offset-md-1">
+                    <!-- First Name and Last Name-->
+                    <div class="form-row">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group">
+                                <input class="form-control input-lg" type="text" name="firstName"
+                                    [(ngModel)]="player.firstName" #firstName="ngModel" placeholder="First Name" 
+                                    [ngClass]="{ 'is-invalid': signUpForm.submitted && firstName.invalid }"
+                                    required>
+                                <div class="invalid-feedback" 
+                                    *ngIf="signUpForm.submitted && firstName.errors">
+                                    <p *ngIf="firstName.errors.required">Field is required</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group">
+                                <input class="form-control input-lg" type="text" name="lastName"
+                                    [(ngModel)]="player.lastName" #lastName="ngModel" placeholder="Last Name" 
+                                    [ngClass]="{ 'is-invalid': signUpForm.submitted && lastName.invalid }"
+                                    required>
+                                <div class="invalid-feedback" 
+                                    *ngIf="signUpForm.submitted && lastName.errors">
+                                    <p *ngIf="lastName.errors.required">Field is required</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Email-->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-dark text-light">@</span>
+                            </div>
+                            <input class="form-control input-lg" type="email" name="email"
+                                [(ngModel)]="player.email" #email="ngModel" placeholder="Email Address" 
+                                [ngClass]="{ 'is-invalid': signUpForm.submitted && email.invalid }"
+                                email required>
+                            <div class="invalid-feedback" 
+                                *ngIf="signUpForm.submitted && email.errors">
+                                <p *ngIf="email.errors.required">Field is required</p>
+                                <p *ngIf="email.errors.email">Must be a valid email address</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Password and Confirmation -->
+                    <div class="form-row">
+                        <div class="col-xs-12 col-md-6">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-dark text-light">
+                                            <i class="fa fa-unlock-alt fa-lg" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control input-lg" type="password" name="password"
+                                        [(ngModel)]="player.password" #password="ngModel" placeholder="Password"
+                                        [ngClass]="{ 'is-invalid': signUpForm.submitted && password.invalid }"
+                                        minlength="6" required>
+                                    <div class="invalid-feedback" 
+                                        *ngIf="signUpForm.submitted && password.invalid && password.errors">
+                                        <div *ngIf="password.errors.required">Field is required</div>
+                                        <div *ngIf="password.errors.minlength">Password should be at least 6 characters long</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="form-group">
+                                <input class="form-control input-lg" type="password" name="confirmPassword"
+                                    [(ngModel)]="player.confirmPassword" #confirmPassword="ngModel" placeholder="Confirm Password"
+                                    [ngClass]="{ 'is-invalid': signUpForm.submitted 
+                                        && (confirmPassword.errors || signUpForm.errors)}"
+                                    required>
+                                <div class="invalid-feedback" 
+                                    *ngIf="signUpForm.submitted">
+                                    <div *ngIf="confirmPassword.errors?.required">Field is required</div>
+                                    <div *ngIf="signUpForm.errors?.noMatch">Both passwords should match</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- BirthDate picker -->
+                    <!-- <div class="form-group">
+                        <div class="input-group date datepicker p-0 shadow-sm">
+                            <div class="input-group-append">
+                                <span class="input-group-text calendar bg-dark text-light">
+                                    <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
+                                    <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <!- <input [(ngModel)]="player.birthDate" ngbDatepicker #pick="ngbDatepicker" 
+                                class="form-control p-2" placeholder="Your birth date" type="date"> ->
+                            <input class="form-control input-lg" type="date" name="birthDate"
+                                [(ngModel)]="player.birthDate" #birthDate="ngModel" placeholder="Your birth date" 
+                                [ngClass]="{ 'is-invalid': signUpForm.submitted && birthDate.invalid }"
+                                required>
+                            <div class="invalid-feedback" 
+                                *ngIf="signUpForm.submitted && email.errors">
+                                <p *ngIf="email.errors.required">Field is required</p>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- Player Name -->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-dark text-light">
+                                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <input class="form-control input-lg" type="text" name="username"
+                                [(ngModel)]="player.username" #username="ngModel" placeholder="Player Name" 
+                                [ngClass]="{ 'is-invalid': signUpForm.submitted && username.invalid }"
+                                required>
+                            <div class="invalid-feedback" 
+                                *ngIf="signUpForm.submitted && username.errors">
+                                <p *ngIf="username.errors.required">Field is required</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div></div>
+                
+                <div class="form-row">
+                    <div class="col-xs-12 col-md-6 offset-md-3">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-secondary btn-block btn-lg">
+                                <span *ngIf="awaitingResponse" class="spinner-border text-light text-center"></span>
+                                <span *ngIf="!awaitingResponse">Register</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="warnings" class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Oops! </strong>{{warnings}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer d-flex px-5" style="background-color: rgb(128, 128, 128, 0.5)">
+            <a class="card-link text-dark mr-2" (click)="returnBackButton()" role="button">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </a>
+            <div class="mr-auto">
+                <div>Already have an account?</div>
+                <a class="card-link text-decoration-none text-secondary" (click)="redirectSignIn()" role="button">
+                    Click here</a>
+            </div>
+        </div>
+    </div>
+</div></div></div>

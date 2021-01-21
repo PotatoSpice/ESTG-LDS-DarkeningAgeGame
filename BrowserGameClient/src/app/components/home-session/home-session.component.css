@@ -1,0 +1,26 @@
+.custom-font {
+    padding-top: 12px;
+    font-family: Aclonica; 
+    font-size: 28px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 400; 
+    line-height: 30.8px;
+}
+
+@media (max-width: 768px) {
+    .custom-font {
+        padding-right: 15px;
+    }
+}
+
+/* .navbar-brand
+{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-brand img
+{
+    max-height: 100%;
+} */

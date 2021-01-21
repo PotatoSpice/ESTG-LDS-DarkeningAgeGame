@@ -1,0 +1,30 @@
+<div class="jumbotron text-center py-3" style="background-color: rgb(255, 255, 224, 0.9);">
+    <div *ngIf="gameRoomId !== ''">
+        <h1 class="display-3">You are currently in Game!</h1>
+        <p class="lead">Click the button below to launch the Desktop game.</p>
+        <hr>
+        <div *ngIf="playerId === '' || playerToken === ''" class="py-2 lead">
+            <div class="d-inline">
+                <span class="align-middle spinner-border text-dark"></span>
+                <span class="align-middle text-monospace pl-4">Loading data ...</span>
+            </div>
+        </div>
+        <div *ngIf="playerId !== '' && playerToken !== ''" class="py-2 lead">
+            <a class="btn btn-secondary" role="button" (click)="connectToGame()">
+                Launch Game
+            </a>
+            <!-- <a class="btn btn-secondary" role="button"
+                href="ms-calculator:?delayInSeconds=2">
+                Launch Game
+            </a> -->
+        </div>
+    </div>
+    <div *ngIf="gameRoomId === ''">
+        <h1 class="display-4">Game could not be launched ...</h1>
+        <p class="lead">You're either not currently in a game or the game has already launched.</p>
+        <hr>
+        <button class="btn btn-secondary" [routerLink]="['session', 'hub']" role="button">
+            Redirect To Session Page
+        </button>
+    </div>
+</div>

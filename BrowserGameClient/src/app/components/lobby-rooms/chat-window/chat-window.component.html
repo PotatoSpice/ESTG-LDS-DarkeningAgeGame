@@ -1,0 +1,27 @@
+<div class="card text-justify border-0" style="height: 18em; max-height: 18em; max-width: 70rem; background-color: #fff0;">
+    <div class="card-header bg-dark-clear text-light pl-2 py-1 rounded-0">
+        <div class="text-monospace">Chat Room</div>
+    </div>
+    <div class="card-body bg-grey-clear overflow-auto py-0 px-2">
+        <div class="chat pb-2 px-1" *ngFor="let message of messages.slice().reverse()">
+            <div class="chat-body mt-1">
+                <div class="header">
+                    <strong>{{message.user}}</strong> said:
+                    <small *ngIf="message.time" class="pull-right">
+                        <i class="fa fa-clock-o"></i> {{message.time}}</small>
+                </div>
+                <p class="text-light">{{message.msg}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer bg-grey-clear p-0">
+        <div class="input-group">
+            <input class="form-control list-item-dark border-0 text-light" placeholder="Type your message here" type="text" [formControl]="messageForm"
+                (keyup.enter)="sendMessage()">
+            <div class="input-group-append">
+                <button class="btn btn-dark-clear px-4" type="button" 
+                    (click)="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+</div>

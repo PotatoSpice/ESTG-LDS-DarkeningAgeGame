@@ -1,0 +1,31 @@
+<div class="card-deck mb-2 mx-2" *ngIf="players">
+    <!-- placeholder card -->
+    <div class="card" style="visibility: hidden;"></div>
+    <!-- placeholder card -->
+
+    <!-- [ngClass]="{ 'card-host': player.in && player.data === hostId }" --> 
+    <!-- <h6 *ngIf="player.in && player.data === hostId">Host</h6> -->
+    <div class="card bg-dark text-light rounded border-0" *ngFor="let player of players"
+        [ngClass]="{ 'card-you': player.in && player.data === sessionId }">
+        <img *ngIf="player.in" src="../../../assets/madjimbi_Fixe.gif" alt="Player Avatar" class="card-img-top">
+        <div class="card-body text-center d-flex flex-column">
+            <i *ngIf="!player.in" class="fa fa-plus fa-5x mt-auto" aria-hidden="true"></i>
+            <h5 *ngIf="player.in" class="card-title mt-auto">{{ player.data }}</h5>
+            <h6 *ngIf="player.in && player.data === sessionId">You</h6>
+        </div>
+    </div>
+
+    <!-- placeholder card -->
+    <div class="card" style="visibility: hidden;"></div>
+    <!-- placeholder card -->
+</div> 
+
+<button *ngIf="!finding" (click)="findMatch()" 
+    class="btn btn-secondary m-1" type="button">
+    Find Match
+</button>
+<button *ngIf="finding" (click)="cancelMatchmaking()" 
+    class="btn btn-secondary m-1" type="button">
+    <span class="spinner-border spinner-border-sm text-light mr-2 pb-1"></span>
+    <span>Cancel</span>
+</button>

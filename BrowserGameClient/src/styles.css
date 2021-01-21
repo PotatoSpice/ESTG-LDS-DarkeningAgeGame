@@ -1,0 +1,192 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body {
+    background-image: url("assets/background-image.png");
+    background-size: auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-color: black;
+    padding-top: 70px;
+    margin: 0; 
+    height: 100%; 
+    overflow-x: hidden;
+}
+
+.popover-header {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+}
+.popover-body {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.popover {
+    background-color: transparent;
+}
+
+/* Bootstrap global theme colors replacement */
+.bg-primary {
+    background-color: #ffc400 !important
+}
+.bg-primary-clear {
+    background-color: #ffc400f0 !important
+}
+.bg-secondary {
+    background-color: #66023c !important
+}
+.bg-secondary-clear {
+    background-color: #66023cf0 !important
+}
+.bg-light-clear {
+    background-color: #fffffff6 !important
+}
+.bg-grey {
+    background-color: #6c757d
+}
+.bg-grey-clear {
+    background-color: #6c757df6
+}
+.bg-dark {
+    background-color: #120f13 !important
+}
+.bg-dark-clear {
+    background-color: #120f13f6 !important
+}
+.text-primary {
+    color: #ffc400 !important
+}
+.text-secondary {
+    color: #66023c !important
+}
+
+/* Color themes for bootstrap components */
+.jumbo-primary {
+    background-color: #ffffe0e6
+}
+
+.list-item-light {
+    background-color: #dfd1ebe9
+}
+.list-item-light:hover {
+    background-color: #dfd1ebe9
+}
+.list-item-light:focus {
+    background-color: #dfd1ebe9
+}
+.list-item-grey {
+    background-color: #756c7de9
+}
+.list-item-grey:hover {
+    background-color: #756c7de9
+}
+.list-item-grey:focus {
+    background-color: #756c7de9
+}
+.list-item-dark {
+    background-color: #262329e9
+}
+.list-item-dark:hover {
+    background-color: #262329e9
+}
+.list-item-dark:focus {
+    background-color: #262329e9
+}
+
+.card-you {
+    color: #212529 !important;
+    background-color: #f3b748 !important
+}
+.card-host {
+    color: #fff !important;
+    background-color: #ed68ff !important
+}
+
+.btn-primary {
+    color: #212529 !important;
+    background-color: #ffc400 !important;
+    border-color: #ffc400;
+}
+.btn-primary:hover {
+    color: #212529 !important;
+    background-color: #ecb602 !important;
+    border-color: #ecb602;
+}
+.btn-primary:focus {
+    color: #212529 !important;
+    background-color: #ecb602 !important;
+    border-color: #ecb602;
+}
+.btn-primary-clear {
+    color: #212529;
+    background-color: #ffc400e6;
+    border-color: #ffc400e6;
+}
+.btn-primary-clear:hover {
+    color: #212529;
+    background-color: #ecb602e6;
+    border-color: #ecb602e6;
+}
+.btn-primary-clear:focus {
+    color: #212529;
+    background-color: #ecb602e6;
+    border-color: #ecb602e6;
+}
+
+.btn-secondary {
+    color: #fff !important;
+    background-color: #66023c !important;
+    border-color: #66023c !important
+}
+.btn-secondary:hover {
+    color: #fff !important;
+    background-color: #440128 !important;
+    border-color: #66023c !important
+}
+.btn-secondary:focus {
+    color: #fff !important;
+    background-color: #440128 !important;
+    border-color: #66023c !important
+}
+.btn-secondary-clear {
+    color: #fff;
+    background-color: #66023cf2;
+    border-color: #66023cf2;
+}
+.btn-secondary-clear:hover {
+    color: #fff;
+    background-color: #440128f2;
+    border-color: #66023cf2
+}
+.btn-secondary-clear:focus {
+    color: #fff;
+    background-color: #440128f2;
+    border-color: #66023cf2
+}
+
+.btn-dark-clear {
+    color: #fff;
+    background-color: #262329e6;
+    border-color: #262329e6;
+}
+.btn-dark-clear:hover {
+    color: #fff;
+    background-color: #120f13e6;
+    border-color: #262329e6
+}
+.btn-dark-clear:focus {
+    color: #fff;
+    background-color: #120f13e6;
+    border-color: #262329e6
+}
+
+/* Color theme changes to replace bootstrap components */
+.card-transparent {
+    background-color: #fff0;
+    border: #fff0;
+}
+.btn-warning-transparent {
+    background-color: #e0a800c0
+}

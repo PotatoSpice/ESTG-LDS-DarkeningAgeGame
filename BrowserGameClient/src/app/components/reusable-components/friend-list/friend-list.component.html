@@ -1,0 +1,46 @@
+<button class="btn btn-dark-clear toggle-list pl-2 py-1" 
+    data-toggle="collapse" data-target="#friendList" type="button">
+    <div class="text-monospace">Friends</div>
+    <strong><i class="fa fa-address-card-o" aria-hidden="true"></i></strong>
+</button>
+<div class="card-transparent card-body m-0 p-0 collapse show" id="friendList">
+    <div *ngIf="players.length == 0" class="list-group">
+        <div class="card-body bg-grey-clear text-light m-0 p-2 rounded-0 text-center">
+            <div class="text-monospace">Feels lonely here</div>
+            <div>(ಥ﹏ಥ)</div>
+        </div>
+    </div>
+    <div *ngIf="players.length != 0" class="list-group">
+        <li class="list-group-item list-item-dark p-0" *ngFor="let player of players">
+            <div class="d-flex pr-2 text-light">
+                <img src="../../../assets/surprised_pikachu.jpg" alt="Player Avatar" class="pr-2" style="width: 8rem; height: 100%;">
+                <div style="max-width: 8rem;">
+                    <div *ngIf="player.online" class="text-success">Online</div>
+                    <div *ngIf="!player.online" class="text-danger">Offline</div>
+                    <div>{{player.username}}</div>
+                </div>
+            </div>
+            <div *ngIf="inroom">
+                <button (click)="inviteToLobby(player)" class="btn btn-light btn-sm w-100 border-0" type="button">
+                    Invite
+                </button>
+            </div>
+            <div *ngIf="!inroom" class="dropdown w-100">
+                <button type="button" class="btn btn-light btn-sm w-100 dropdown-toggle border-0" data-toggle="dropdown">
+                    Options
+                </button>
+                <div class="dropdown-menu" role="menu">
+                    <a (click)="viewPlayerProfile(player)" class="dropdown-item" role="button">
+                        <a><i class="fa fa-address-card-o mr-1" aria-hidden="true"></i></a>
+                        View Profile
+                    </a>
+                    <a (click)="removeFriend(player)" class="dropdown-item" role="button">
+                        <a><i class="fa fa-chain-broken mr-1" aria-hidden="true"></i></a>
+                        Remove Friend
+                    </a>
+                    <a class="dropdown-item" role="button">More to come ...</a>
+                </div>
+            </div>
+        </li>
+    </div> 
+</div>

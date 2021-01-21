@@ -1,0 +1,63 @@
+<div class="card-transparent">
+    <div class="card-header bg-dark-clear text-light pl-2 py-1 rounded-0">
+        <div class="text-monospace">Notifications</div>
+    </div>
+    <div *ngIf="!awaitingResponse" class="card-body m-0 p-0 rounded-0">
+        <div *ngIf="notifications.length != 0" class="list-group">
+            <a *ngFor="let notification of notifications" 
+                class="list-group-item list-group-item-action list-item-grey text-light d-lg-block p-1 border-bottom">
+                <div *ngIf="notification.roomId">
+                    <div class="text-center mb-1">
+                        <div style="font-size: x-large;"><strong>Game Invite</strong></div>
+                        <div>from <strong>{{notification.hostId}}</strong></div>
+                    </div>
+                    <div class="px-2 d-none d-lg-flex">
+                        <button (click)="acceptInvite(notification)" class="btn btn-light w-100" type="button">
+                            Accept</button>
+                        <button (click)="declineInvite(notification)" class="btn btn-light ml-1 w-100" type="button">
+                            Decline</button>
+                    </div>
+                    <div class="px-2 d-lg-none">
+                        <button (click)="acceptInvite(notification)" class="btn btn-light w-100" type="button">
+                            Accept</button>
+                        <button (click)="declineInvite(notification)" class="btn btn-light w-100" type="button">
+                            Decline</button>
+                    </div>
+                </div>
+                <div *ngIf="!notification.roomId">
+                    <div class="text-center mb-1">
+                        <div style="font-size: x-large;"><strong>Friend Invite</strong></div>
+                        <div>from <strong>{{notification}}</strong></div>
+                    </div>
+                    <div class="px-2 d-none d-lg-block">
+                        <button (click)="acceptFriend(notification)" class="btn btn-light w-100" type="button"
+                            triggers="click:blur" placement="bottom" container="body" 
+                            [openDelay]="300" [closeDelay]="500" ngbTooltip="{{friendTooltip}}">
+                            Accept</button>
+                        <button (click)="declineFriend(notification)" class="btn btn-light w-100" type="button">
+                            Decline</button>
+                    </div>
+                    <div class="px-2 d-lg-none">
+                        <button (click)="acceptFriend(notification)" class="btn btn-light w-100" type="button"
+                            triggers="click:blur" placement="bottom" container="body" 
+                            [openDelay]="300" [closeDelay]="500" ngbTooltip="{{friendTooltip}}">
+                            Accept</button>
+                        <button (click)="declineFriend(notification)" class="btn btn-light w-100" type="button">
+                            Decline</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div *ngIf="notifications.length == 0" class="list-group">
+            <div class="card-body bg-grey-clear text-light m-0 p-2 rounded-0">
+                <div class="text-monospace pl-4">No current notifications</div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="awaitingResponse" class="card-body bg-grey-clear text-light m-0 p-2 rounded-0">
+        <div class="d-flex-collumn align-items-center text-center">
+            <span class="spinner-border spinner-border-sm"></span>
+            <!-- <div class="text-monospace pl-4">Fetching notifications ...</div> -->
+        </div>
+    </div>
+</div>

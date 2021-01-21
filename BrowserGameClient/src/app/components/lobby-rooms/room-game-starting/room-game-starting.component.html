@@ -1,0 +1,65 @@
+<!-- <div class="container p-3 text-center bg-light">
+    <h2>DEV ALERT</h2>
+    <p>
+        Esta será a página onde os jogadores poderão interagir antes do jogo ser lançado pelo Unity. 
+        Será também possível ver quais as fações atribuidas aos jogadores.
+    </p>
+    <p>
+        <strong>A página irá existir na altura em que o início da aplicação Unity pelo browser 
+            seja implementado!</strong>  
+    </p>
+    <p>
+        Será aberta uma conexão com o servidor relativa à sala de jogo criada, utilizando o service "GameRoomCommunicationService". 
+        Para isto ser possível, estão guardados, através um service para partilha de dados, 
+        o playerId e o roomId necessários para a conexão.
+    </p>
+    <p>
+        playerId: {{ playerId }} | roomId: {{ gameRoomId }}
+    </p>
+    <a class="btn btn-secondary btn-lg center" [routerLink]="['session', 'hub']" role="button">
+        Redirect To Session Page</a>
+</div> -->
+
+<div *ngIf="connected" class="container">
+    <!-- [ngClass]="{ 'card-host': playerId === hostId }" --> 
+    <!-- <h6 *ngIf="player.in && player.data === hostId">Host</h6> -->
+    <div class="card-deck m-1" *ngIf="players"> 
+        <div class="card pb-1 rounded border-0 text-light" *ngFor="let player of players"
+            [ngClass]="{'card-faction-royalists': player.faction === 'Royalists', 'card-faction-remnant': player.faction === 'Remnant', 'card-faction-horde': player.faction === 'Horde', 'card-faction-confederation': player.faction === 'Confederation' }">
+            <img src="../../../assets/madjimbi_Fixe.gif" alt="Player Avatar" class="card-img-top">
+            <div class="card-body text-center d-flex flex-column">
+                <h6 *ngIf="player.playerId === playerId">You</h6>
+                <h5 class="card-title mt-auto">
+                    {{ player.playerId }}</h5>
+                <p class="card-text">
+                    {{ player.faction }}</p>
+            </div>
+        </div>
+    </div> 
+    
+    <div class="d-inline-flex w-100">
+        <div class="w-75">
+            <app-chat-window [messages]="messages" (message)="onMessage($event)"></app-chat-window>
+        </div>
+        <div class="timer flex-fill ml-4 mt-4 p-3 d-flex-collumn text-center justify-content-center">
+            <div>Game starting in..</div>
+            <div><span>{{time}}</span>s</div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!connected" class="row"><div class="col-8 offset-2 py-2">
+    <div *ngIf="!connError" class="card card-body text-center py-4">
+        <div class="d-inline">
+            <span class="align-middle spinner-border text-dark text-center"></span>
+            <span class="align-middle text-monospace pl-4">Connecting ...</span>
+        </div>
+    </div>
+    <div *ngIf="connError" class="card card-body text-center py-4">
+        <div class="d-inline mx-auto">
+            <span class="align-middle text-monospace pr-2">Couldn't connect to server ...</span>
+            <button class="btn btn-secondary" [routerLink]="['session', 'hub']" role="button">
+                Redirect To Session Page</button>
+        </div>
+    </div>
+</div></div>

@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0">
+        <a class="navbar-brand mr-auto" routerLink=''>
+            <img src="../../../assets/LDS_logo.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            Home
+        </a>
+    </div>
+
+    <div class="mx-auto order-0">
+        <a class="navbar-brand custom-font mx-auto" routerLink=''>Darkening Age</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" routerLink='sign-up'>
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign Up
+            </a></li>
+            <li class="nav-item"><a class="nav-link" routerLink='sign-in'>
+                <i class="fa fa-sign-in" aria-hidden="true"></i> Sign In
+            </a></li>
+        </ul>
+    </div>
+</nav>
+<main class="container-fluid">
+    <div class="jumbotron jumbo-primary text-center py-3">
+        <h1 class="display-3">Sign Up to Start Playing</h1>
+        <p>Or sign in if you already have an account!</p>
+        <hr class="my-2">
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" routerLink='sign-up' role="button">Sign Up</a>
+            or
+            <a class="btn btn-primary btn-lg" routerLink='sign-in' role="button">Sign In</a>
+        </p>
+    </div>
+</main>
+<footer class="my-2">
+    <div class="card bg-dark-clear text-light">
+        <div class="card-body text-center">© Grupo 15 2020</div>
+    </div>
+</footer>

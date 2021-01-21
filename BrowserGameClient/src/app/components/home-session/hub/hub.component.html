@@ -1,0 +1,118 @@
+<!-- espaço à esquerda, visivel só para lg-up -->
+<!-- <div class="col-lg-1 d-none d-lg-inline"
+    style="background-image: url('../../../assets/madjimbi_Fixe.gif'); background-size: 100% auto;">
+</div> -->
+<div class="d-block d-md-flex">
+    <div class="w-100 pr-md-3">
+        <!-- perfil simples e dados do utilizador em sessão -->
+        <div class="row"><div class="col-12 col-md-10 offset-md-1">
+            <div class="card profile text-light border-0">
+                <div class="card-body d-block d-md-flex">
+                    <img class="img-fluid border border-dark rounded profile-image" 
+                        src="../../../assets/vibing_cat02.gif" alt="Player Avatar">
+                    <div class="profile-text">
+                        <strong (click)="checkProfile()" role="button">Welcome, {{sessionId}}</strong>
+                    </div>
+                </div>
+            </div>
+        </div></div>
+
+        <div class="d-block d-sm-inline-flex w-100 py-2">
+            <div class="w-100 w-sm-75 pr-0 pr-sm-3">
+                <!-- botões e alertas -->
+                <div *ngIf="connected" class="m-2">
+                    <div *ngIf="!ingame && !inlobby" class="btn-group mb-2 d-flex" role="group">
+                        <button (click)="connectAndHost()" class="btn btn-secondary-clear" type="button">
+                            Host Lobby</button>
+                        <button (click)="connectAndHostMM()" class="btn btn-secondary-clear ml-1" type="button">
+                            Find Match</button>
+                    </div>
+
+                    <!-- <div *ngIf="!ingame && !inlobby" class="btn-group mb-2 d-flex" role="group">
+                        <button (click)="connectAndJoin()" class="btn btn-secondary-clear" type="button">
+                            Join Lobby</button>
+                            <button (click)="connectAndJoinMM()" class="btn btn-secondary-clear ml-1" type="button">
+                                Join Matchmaking Lobby</button>
+                    </div>
+                    <div *ngIf="!ingame && !inlobby" class="input-group">
+                        <input *ngIf="!ingame && !inlobby" class="form-control border no-shadow no-rounded" placeholder="Room Id ..." [formControl]="roomJoin">
+                    </div> -->
+
+                    <button *ngIf="!ingame && inlobby" (click)="currentlyInLobby()" 
+                        class="btn btn-primary-clear w-100 mr-1" type="button">
+                        Back To Room</button>
+
+                    <button *ngIf="ingame" (click)="currentlyInGame()" 
+                        class="btn btn-primary-clear w-100 mr-1" type="button">
+                        Reconnect</button>
+                </div>
+
+                <div *ngIf="!connected">
+                    <div *ngIf="!warnings" class="text-center py-2 text-light">
+                        <div class="d-inline">
+                            <span class="align-middle spinner-border"></span>
+                            <span class="align-middle text-monospace pl-4">Checking game server ...</span>
+                        </div>
+                    </div>
+                    <div *ngIf="warnings" class="text-center py-2">
+                        <button (click)="checkServer()" 
+                            class="btn btn-secondary-clear " type="button">
+                            Retry</button>
+                        <div class="alert alert-warning alert-dismissible fade show mt-2" role="alert">
+                            <strong>Oops! </strong>{{warnings}}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- histórico de partidas do jogador em sessão -->
+                <app-match-history [player]="sessionId"></app-match-history>
+            </div>
+            <div class="w-sm-25 pt-2 pt-sm-0">
+                <!-- notificações do jogador em sessão -->
+                <app-notifications></app-notifications>
+            </div>
+        </div>
+    </div>
+    <div>
+        <!-- lista de amigos (à direita para md-up, abaixo para md-down -->
+        <app-friend-list></app-friend-list>
+    </div>
+</div>
+
+<!-- <div class="container p-3 text-center bg-light">
+    <h2>DEV ALERT</h2>
+    <p>
+        A página não está implementada na totalidade, uma vez que não ficou planeado para a 
+        2ª milestone a implementação o WebService para autenticação, lista de amigos e convites de jogo.
+    </p>
+    <p>
+        Como alternativa e para possibilitar a interação com o entregável do *back-end* da segunda milestone, 
+        o serviço web de gestão de salas e processamento do jogo, devem ser utilizados os seguintes botões.
+    </p>
+    <div *ngIf="!inlobby" class="input-group">
+        <span class="input-group-btn">
+            <button (click)="connectAndHostMM()" class="btn btn-secondary-clear no-rounded" type="button">
+                Host Matchmaking Lobby</button>
+        </span>
+        <span class="input-group-btn">
+            <button (click)="connectAndHost()" class="btn btn-secondary-clear no-rounded" type="button">
+                Host Lobby</button>
+        </span>
+    </div>
+    <div *ngIf="!inlobby" class="input-group">
+        <span class="input-group-btn">
+            <button (click)="connectAndJoinMM()" class="btn btn-secondary-clear no-rounded" type="button">
+                Join Matchmaking Lobby</button>
+        </span>
+        <input class="form-control border no-shadow no-rounded" placeholder="Room Id ..." [formControl]="roomJoin">
+        <span class="input-group-btn">
+            <button (click)="connectAndJoin()" class="btn btn-secondary-clear no-rounded" type="button">
+                Join Lobby</button>
+        </span>
+    </div>
+    <button *ngIf="inlobby" (click)="redirectToRoom()" class="btn btn-secondary-clear no-rounded" type="button">
+        Back To Room</button>
+</div> -->
