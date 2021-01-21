@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+	<head>
+		<title>AltWSClient - GameService Game Rooms</title>
+		<meta name="title" content="WebSocket AltClient">
+		<meta name="description" content="Alternative html client for websocket connections">
+    </head>
+    <body style="background-color: #000000; color: #FFFFFF">
+		<div id="connect_block" style="padding-top: 10px;">
+			<input type=text id="playerAuth" placeholder="Enter player authorization"/>
+			<input type=text id="playerId" placeholder="Enter player id"/>
+			<input type=text id="roomId" placeholder="Enter room Id"/>
+			<button id="connectButton">Connect</button>
+		</div>
+
+		<div id="disconnect_block" style="visibility: hidden;">
+			<input type=text id="chatMessage" placeholder="Send a chat message to the server" style="width: 20%"/>
+			<button id="sendMessage">Send Message</button>
+			<div>
+				<input type=text id="requestType" placeholder="Request Type"/>
+				<input type=text id="requestData" placeholder='Request data (JSON array format without [])' style="width: 30%"/>
+				<button id="sendRequest">Send Request</button>
+			</div>
+			<div style="width: fit-content;">
+				<button id="closeButton">Close Connection</button>
+			</div>
+		</div>
+
+		<h3>Server Messages</h3>
+		<ul id="messages"></ul>
+		
+		<h3>Socket Updates</h3>
+		<ul id="updates"></ul>
+
+		<script language="javascript" type="text/javascript">
+			// Abrir conexão com o servidor e descrever o que fazer para cada um dos eventos do socket
+			var socket = undefined;
+			function connect(uri) {
+				socket = new WebSocket(uri);
+				socket.onopen = function(event) {
+					updateStatus("opened connection to " + uri)
+					document.getElementById("disconnect_block").style.visibility = "visible";
+					document.getElementById("connect_block").style.visibility = "hidden";
+				};
+				socket.onclose = function(event) {
+					updateStatus("closed connection from " + uri)
+					document.getElementById("disconnect_block").style.visibility = "hidden";
+					document.getElementById("connect_block").style.visibility = "visible";
+					socket = undefined;
+				};
+				socket.onmessage = function(event) {
+					appendMessage(list, event.data);
+					console.log(event.data);
+				};
+				socket.onerror = function(event) {
+					console.log("on.error: " + event.data);
+				};
+			}
+			
+			// Interação com os elementos HTML
+			var list = document.getElementById("messages");
+			var updates = document.getElementById("updates");
+			// connect button
+			var connb = document.getElementById("connectButton");
+			connb.addEventListener("click", function() {
+				var playerAuth = document.getElementById("playerAuth");
+				var playerId = document.getElementById("playerId");
+				var roomId = document.getElementById("roomId");
+				if (playerAuth !== '' && playerId !== '' && roomId !== '')
+					connect(`wss://localhost:5001/ws-game/?room-id=${roomId.value}&player-auth=${playerAuth.value}`);
+
+			});
+			// send message button
+			var button = document.getElementById("sendMessage");
+			button.addEventListener("click", function() {
+
+				var input = document.getElementById("chatMessage");
+				sendMessage(`{"EventType":"ChatMessage", "data":["${playerId.value}","${input.value}"]}`);
+
+				input.value = "";
+			});
+			function sendMessage(message) {
+				if (socket) {
+					console.log("Sending: " + message);
+					socket.send(message);
+				}
+			}
+			// send request button
+			var sendR = document.getElementById("sendRequest");
+			sendR.addEventListener("click", function() {
+
+				var type = document.getElementById("requestType");
+				var data = document.getElementById("requestData");
+				sendMessage(`{"EventType":${type.value}, "data":[${data.value}]}`);
+
+				type.value = data.value = "";
+			});
+			// close button
+			var closeb = document.getElementById("closeButton");
+			closeb.addEventListener("click", function() {
+				socket.close();
+			});
+			
+			// Receção das Mensagens
+			function appendMessage(list, message) {
+				var item = document.createElement("li");
+				item.appendChild(document.createTextNode(message));
+				list.appendChild(item);
+			}
+			function updateStatus(status) {
+				appendMessage(updates, `${ new Date().toLocaleTimeString() } | WebSocket_Status: ${ status }`);
+				console.log(status);
+			}
+		</script>
+    </body>
+</html>

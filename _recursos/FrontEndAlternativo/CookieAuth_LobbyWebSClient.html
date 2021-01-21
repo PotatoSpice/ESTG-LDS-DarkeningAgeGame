@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+	<head>
+		<title>AltWSClient with CookieAuth - Lobby Rooms</title>
+		<meta name="title" content="WebSocket AltClient with Cookie Authentication">
+		<meta name="description" content="Alternative html client for websocket connections">
+    </head>
+	<body style="background-color: #000000; color: #FFFFFF">
+		<div id="auth_block" style="padding-top: 10px;">
+			
+			<!-- <input type=text id="cookie-key" placeholder="cookie-key"/>
+			<input type=text id="cookie-value" placeholder="cookie-value"/> -->
+			<input type=text id="auth_username" placeholder="Username"/>
+			<input type=text id="auth_password" placeholder="Password"/>
+			<button id="auth_login">Login</button>
+		</div>
+
+		<div id="connect_block" style="padding-top: 10px; visibility: hidden;">
+			<input type=text id="roomId" placeholder="Enter room Id"/>
+			<button id="joinButton">Join</button>
+			<button id="hostButton">Host</button>
+		</div>
+
+		<div id="disconnect_block" style="visibility: hidden;">
+			<input type=text id="chatMessage" placeholder="Send a chat message to the server" style="width: 20%"/>
+			<button id="sendMessage">Send Message</button>
+			<button id="startButton">Start Game</button>
+			<div>
+				<button id="closeButton">Close Connection</button>
+			</div>
+		</div>
+
+		<h3>WebSocket Messages</h3>
+		<ul id="messages"></ul>
+		
+		<h3>Server Status Updates</h3>
+		<ul id="updates"></ul>
+
+		<script language="javascript" type="text/javascript">
+			var auth_block = document.getElementById("auth_block");
+			var connect_block = document.getElementById("connect_block");
+			var disconnect_block = document.getElementById("disconnect_block");
+
+			// # Sign In com a API (a API retorna na resposta o header "Set-Cookie" com o token)
+			var auth_username = document.getElementById("auth_username");
+			var auth_password = document.getElementById("auth_password");
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function () {
+				if (this.readyState == 4) {
+					if (this.status == 200) {
+						var resp = JSON.parse(this.responseText);
+						updateAuthStatus(this.responseText)
+						connect_block.style.visibility = "visible";
+						auth_block.style.visibility = "hidden";
+
+					} else if (this.status == 401) {
+						updateAuthStatus(this.responseText);
+
+					} else if (this.status == 400) {
+						updateAuthStatus(this.responseText);
+
+					} else {
+						console.log("[UknownResponse] " + resp);
+					}
+				}
+			}
+			// login button
+			var auth_login = document.getElementById("auth_login");
+			auth_login.addEventListener("click", function() {
+				if (auth_username && auth_password) {
+					xhttp.open("POST", "http://localhost:3000/session/sign-in", true);
+					xhttp.setRequestHeader("Content-type", "application/json");
+					xhttp.withCredentials = true;
+					xhttp.send(JSON.stringify({ 
+						username: auth_username.value, 
+						password: auth_password.value 
+					}));
+				}
+			});
+			
+			// # Abrir conexão com o servidor e descrever o que fazer para cada um dos eventos do socket
+			var socket = undefined;
+			function connect(uri) {
+				socket = new WebSocket(uri);
+				socket.onopen = function(event) {
+					updateStatus("opened connection to " + uri)
+					disconnect_block.style.visibility = "visible";
+					connect_block.style.visibility = "hidden";
+				};
+				socket.onclose = function(event) {
+					updateStatus("closed connection from " + uri + " | errorStatus: " + event.status)
+					disconnect_block.style.visibility = "hidden";
+					connect_block.style.visibility = "visible";
+					socket = undefined;
+				};
+				socket.onmessage = function(event) {
+					appendMessage(list, event.data);
+					console.log(event.data);
+				};
+				socket.onerror = function(event) {
+					console.log("on.error: " + event.data);
+				};
+			}
+
+			// # Receção das Mensagens
+			function appendMessage(list, message, extra) {
+				var item = document.createElement("li");
+				item.appendChild(document.createTextNode(message));
+				list.appendChild(item);
+			}
+			function updateStatus(status) {
+				appendMessage(updates, `${ new Date().toLocaleTimeString() } | WebSocket_Status: ${ status }`);
+				console.log(status);
+			}
+			function updateAuthStatus(status) {
+				appendMessage(updates, `${ new Date().toLocaleTimeString() } | Auth_Status: ${ status }`);
+				console.log(status);
+			}
+			function setCookie(key, value) {
+				if (!document.cookie.includes('auth-token', 0))
+				if (key != "" && value != "") document.cookie = `${ key.value }=${ value.value }`
+			}
+			
+			// # Interação com os elementos HTML
+			var list = document.getElementById("messages");
+			var updates = document.getElementById("updates");
+			// send message button
+			var button = document.getElementById("sendMessage");
+			button.addEventListener("click", function() {
+
+				var input = document.getElementById("chatMessage");
+				sendMessage(`{"eventType":"chat-message", "data":"${input.value}"}`);
+
+				input.value = "";
+			});
+			function sendMessage(message) {
+				if (socket) {
+					console.log("Sending: " + message);
+					socket.send(message);
+				}
+			}
+			// host button
+			var hostb = document.getElementById("hostButton");
+			hostb.addEventListener("click", function() {
+				
+				connect(`wss://localhost:5001/ws-lobby/host`);
+
+				// key.value = value.value = "";
+			});
+			// join button
+			var joinb = document.getElementById("joinButton");
+			joinb.addEventListener("click", function() {
+				
+				var roomId = document.getElementById("roomId");
+				connect(`wss://localhost:5001/ws-lobby/join/?room-id=${roomId.value}`);
+
+			});
+			// start button
+			var startb = document.getElementById("startButton");
+			startb.addEventListener("click", function() {
+				
+				sendMessage(`{"eventType":"start-game"}`);
+
+			});
+			// close button
+			var closeb = document.getElementById("closeButton");
+			closeb.addEventListener("click", function() {
+				socket.close();
+			});
+		</script>
+    </body>
+</html>

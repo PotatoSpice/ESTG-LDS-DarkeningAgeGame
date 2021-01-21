@@ -20,8 +20,6 @@
     ·
     <a href="https://github.com/PotatoSpice/ESTG-LDS-DarkeningAgeGame/issues">Request Feature</a>
   </p>
-  <br/>
-  <br/>
 </p>
 
 # Organização do Repositório
@@ -30,34 +28,55 @@
 
 - Isto é, existe um branch para a API, para o *Game Client* no browser, para a GUI do jogo em Unity e outro para o servidor dedicado do jogo.
 
-- Por sua vez, o *master branch* contém cada uma das aplicações, em princípio, com a versão mais atualizada sobre o *deployment*. Contudo, não chegou a realizar-se nenhum *deploy* das aplicações durante o projeto.
+- Por sua vez, o *master branch* contém cada uma das aplicações, em princípio, com a versão mais atualizada sobre o *deployment*. Contudo, não chegou a realizar-se nenhum *deploy* das aplicações durante o projeto, ou seja, todas as aplicações devem ser executadas em ambiente de desenvolvimento.
 
 ![repo_organization](https://user-images.githubusercontent.com/44165718/105228731-d42f8380-5b5a-11eb-8c93-5df87addd30a.jpg)
 
-# Tecnologias
+# Frameworks e Tecnologia
 
 ### *Game Server*
-*TO BE ADDED*
+Framework:
+- [ASP.NET Core 3.1](https://docs.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-3.1?view=aspnetcore-3.1)
+
+Principais bibliotecas:
+- [Newtonsoft Json](https://www.newtonsoft.com/json) - mapeamento de ficheiros e objetos JSON
+- [WebSockets](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/websockets?view=aspnetcore-3.1) - comunicação em real-time
 
 ### *Game API*
-*TO BE ADDED*
+Framework:
+- [ASP.NET Core 3.1](https://docs.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-3.1?view=aspnetcore-3.1)
+
+Principais bibliotecas:
+- [Entity Framework](https://docs.microsoft.com/en-us/ef/) - armazenamento persistente
+- [JWT Authentication](https://jwt.io/) - sessão e autenticação
+- [AutoMapper](https://docs.automapper.org/en/stable/) - mapeamento de entidades
+- [Swagger API docs](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-3.1) - documentação
 
 ### *Game Client*
-*TO BE ADDED*
+Framework:
+- [Angular v11](https://angular.io/)
+
+Principais bibliotecas:
+- [Bootstrap 4](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - construção páginas web
+- [RxJS](https://angular.io/guide/rx-library) - *event handling* e *reactive programming*, [docs](https://www.learnrxjs.io/)
 
 ### *Game GUI*
-*TO BE ADDED*
+Framework:
+- [Unity v2019.4.x](https://unity.com/solutions/game) | [download](https://unity3d.com/get-unity/download)
 
 # Setup
 
-### *Game Server*
-*TO BE ADDED*
+Cada uma das aplicações requer um *setup* em específico, presente no próprio README de cada aplicação. No entanto, os comandos seguintes devem ser executados para qualquer um dos repositórios:
 
-### *Game API*
-*TO BE ADDED*
-
-### *Game Client*
-*TO BE ADDED*
-
-### *Game GUI*
-*TO BE ADDED*
+1. Clone do repositório:
+```sh
+git clone https://github.com/PotatoSpice/ESTG-LDS-DarkeningAgeGame.git
+```
+2. Checkout para o branch da aplicação, como exemplo:
+```sh
+git checkout -b gameServerDev origin/gameServerDev
+```
+3. Mudar para a pasta do projeto, como exemplo:
+```sh
+cd ./GameServer
+```
