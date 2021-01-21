@@ -1,0 +1,58 @@
+﻿[
+  {
+    "Type": "Urban",
+    "Manpower": 1200,
+    "Wood": -100,
+    "Gold": 750,
+    "Food": -200,
+    "DefenceBonus": 0.5
+  },
+  {
+    "Type": "Forested",
+    "Manpower": 500,
+    "Wood": 900,
+    "Gold": 300,
+    "Food": 400,
+    "DefenceBonus": 0
+  },
+  {
+    "Type": "Mining",
+    "Manpower": 0,
+    "Wood": 0,
+    "Gold": 1000,
+    "Food": 0,
+    "DefenceBonus": 0
+  },
+  {
+    "Type": "Rural",
+    "Manpower": 500,
+    "Wood": 300,
+    "Gold": 350,
+    "Food": 1200,
+    "DefenceBonus": 0
+  },
+  {
+    "Type": "Fort",
+    "Manpower": 0,
+    "Wood": -100,
+    "Gold": -100,
+    "Food": -100,
+    "DefenceBonus": 1
+  },
+  {
+    "Type": "Capital",
+    "Manpower": 1000,
+    "Wood": 1000,
+    "Gold": 1000,
+    "Food": 1000,
+    "DefenceBonus": 0.7
+  },
+  {
+    "Type": "SpecialCapital",
+    "Manpower": 2000,
+    "Wood": 1500,
+    "Gold": 1500,
+    "Food": 1500,
+    "DefenceBonus": 0.7
+  }
+]

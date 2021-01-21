@@ -1,0 +1,122 @@
+[
+  {
+    "Name": "RedGeneral1",
+    "Faction": "Remnant",
+    "Bonus": 1,
+    "GoldCost": 700
+  },
+  {
+    "Name": "RedGeneral2",
+    "Faction": "Remnant",
+    "Bonus": 0.5,
+    "GoldCost": 400
+  },
+  {
+    "Name": "RedGeneral3",
+    "Faction": "Remnant",
+    "Bonus": 0.7,
+    "GoldCost": 550
+  },
+  {
+    "Name": "RedGeneral4",
+    "Faction": "Remnant",
+    "Bonus": 0.4,
+    "GoldCost": 400
+  },
+  {
+    "Name": "RedGeneral5",
+    "Faction": "Remnant",
+    "Bonus": 0.9,
+    "GoldCost": 620
+  },
+  {
+    "Name": "YellowGeneral1",
+    "Faction": "Confederation",
+    "Bonus": 1,
+    "GoldCost": 700
+  },
+  {
+    "Name": "YellowGeneral2",
+    "Faction": "Confederation",
+    "Bonus": 0.5,
+    "GoldCost": 400
+  },
+  {
+    "Name": "YellowGeneral3",
+    "Faction": "Confederation",
+    "Bonus": 0.7,
+    "GoldCost": 550
+  },
+  {
+    "Name": "YellowGeneral4",
+    "Faction": "Confederation",
+    "Bonus": 0.4,
+    "GoldCost": 400
+  },
+  {
+    "Name": "YellowGeneral5",
+    "Faction": "Confederation",
+    "Bonus": 0.9,
+    "GoldCost": 620
+  },
+  {
+    "Name": "BlueGeneral1",
+    "Faction": "Royalists",
+    "Bonus": 1,
+    "GoldCost": 700
+  },
+  {
+    "Name": "BlueGeneral2",
+    "Faction": "Royalists",
+    "Bonus": 0.5,
+    "GoldCost": 400
+  },
+  {
+    "Name": "BlueGeneral3",
+    "Faction": "Royalists",
+    "Bonus": 0.7,
+    "GoldCost": 550
+  },
+  {
+    "Name": "BlueGeneral4",
+    "Faction": "Royalists",
+    "Bonus": 0.4,
+    "GoldCost": 400
+  },
+  {
+    "Name": "BlueGeneral5",
+    "Faction": "Royalists",
+    "Bonus": 0.9,
+    "GoldCost": 620
+  },
+  {
+    "Name": "GreenGeneral1",
+    "Faction": "Horde",
+    "Bonus": 1,
+    "GoldCost": 700
+  },
+  {
+    "Name": "GreenGeneral2",
+    "Faction": "Horde",
+    "Bonus": 0.5,
+    "GoldCost": 400
+  },
+  {
+    "Name": "GreenGeneral3",
+    "Faction": "Horde",
+    "Bonus": 0.7,
+    "GoldCost": 550
+  },
+  {
+    "Name": "GreenGeneral4",
+    "Faction": "Horde",
+    "Bonus": 0.4,
+    "GoldCost": 400
+  },
+  {
+    "Name": "GreenGeneral5",
+    "Faction": "Horde",
+    "Bonus": 0.9,
+    "GoldCost": 620
+  }
+]
