@@ -1,0 +1,42 @@
+﻿[
+  {
+    "Name": "Remnant",
+    "Affinity": "Defence",
+    "Capital": "Unferill",
+    "Manpower": 5000,
+    "Wood":5000,
+    "Gold":5000,
+    "Food": 5000,
+     "DefeatCondition": 0
+  },
+  {
+    "Name": "Confederation",
+    "Affinity": "Defence",
+    "Capital": "YellowCapital",
+    "Manpower": 5000,
+    "Wood": 5000,
+    "Gold": 5000,
+    "Food": 5000,
+    "DefeatCondition": 1
+  },
+  {
+    "Name": "Royalists",
+    "Affinity": "Offence",
+    "Capital": "BlueCapital",
+    "Manpower": 5000,
+    "Wood": 5000,
+    "Gold": 5000,
+    "Food": 5000,
+    "DefeatCondition": 2
+  },
+  {
+    "Name": "Horde",
+    "Affinity": "Offence",
+    "Capital": "GreenCapital",
+    "Manpower": 5000,
+    "Wood": 5000,
+    "Gold": 5000,
+    "Food": 5000,
+    "DefeatCondition": 3
+  }
+]

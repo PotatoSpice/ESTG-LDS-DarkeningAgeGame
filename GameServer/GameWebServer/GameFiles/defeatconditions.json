@@ -1,0 +1,24 @@
+﻿[
+  {
+    "id": 0,
+    "designation": "Total Defeat",
+    "description": "Total Defeat"
+  },
+
+  {
+    "id": 1,
+    "designation": "Lost Manpower",
+    "description": "Lose 30% of Original Manpower"
+  },
+  {
+    "id": 2,
+    "designation": "Lost Gold",
+    "description": "Lose 50% of Original Gold"
+  },
+  {
+    "id": 3,
+    "designation": "Lost food",
+    "description": "Lose 50% of original Food"
+  }
+
+]

@@ -1,0 +1,108 @@
+[
+  {
+    "Terrain": "Hills",
+    "UnitType": "Heavy Infantry",
+    "Bonus": 1
+  },
+  {
+    "Terrain": "Hills",
+    "UnitType": "Light Infantry",
+    "Bonus": 1.3
+  },
+  {
+    "Terrain": "Hills",
+    "UnitType": "Missile Infantry",
+    "Bonus": 1.5
+  },
+  {
+    "Terrain": "Hills",
+    "UnitType": "Siege Weapons",
+    "Bonus": 1.5
+  },
+  {
+    "Terrain": "Hills",
+    "UnitType": "Heavy Cavalry",
+    "Bonus": 0.5
+  },
+  {
+    "Terrain": "Hills",
+    "UnitType": "Light Cavalry",
+    "Bonus": 1.1
+  },
+  {
+    "Terrain": "Hills",
+    "UnitType": "Missile Cavalry",
+    "Bonus": 1
+  },
+  {
+    "Terrain": "Mountains",
+    "UnitType": "Heavy Infantry",
+    "Bonus": 0.5
+  },
+  {
+    "Terrain": "Mountains",
+    "UnitType": "Light Infantry",
+    "Bonus": 1.1
+  },
+  {
+    "Terrain": "Mountains",
+    "UnitType": "Missile Infantry",
+    "Bonus": 1.3
+  },
+  {
+    "Terrain": "Mountains",
+    "UnitType": "Siege Weapons",
+    "Bonus": 1.1
+  },
+  {
+    "Terrain": "Mountains",
+    "UnitType": "Heavy Cavalry",
+    "Bonus": 0.3
+  },
+  {
+    "Terrain": "Mountains",
+    "UnitType": "Light Cavalry",
+    "Bonus": 0.8
+  },
+  {
+    "Terrain": "Mountains",
+    "UnitType": "Missile Cavalry",
+    "Bonus": 1
+  },
+  {
+    "Terrain": "Falt",
+    "UnitType": "Heavy Infantry",
+    "Bonus": 1.8
+  },
+  {
+    "Terrain": "Mountains",
+    "UnitType": "Light Infantry",
+    "Bonus": 1
+  },
+  {
+    "Terrain": "Mountains",
+    "UnitType": "Missile Infantry",
+    "Bonus": 0.7
+  },
+  {
+    "Terrain": "Mountains",
+    "UnitType": "Siege Weapons",
+    "Bonus": 0.7
+  },
+  {
+    "Terrain": "Mountains",
+    "UnitType": "Heavy Cavalry",
+    "Bonus": 2
+  },
+  {
+    "Terrain": "Mountains",
+    "UnitType": "Light Cavalry",
+    "Bonus": 2
+  },
+  {
+    "Terrain": "Mountains",
+    "UnitType": "Missile Cavalry",
+    "Bonus": 2
+  }
+
+]

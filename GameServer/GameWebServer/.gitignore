@@ -1,0 +1,11 @@
+##
+## Remove files with sensitive data
+## (check with a repository colaborator to access the data)
+##
+
+## Global app settings
+appsettings.json
+## appsettings.Development.json
+
+## SQLite databse
+DarkeningAgeDb

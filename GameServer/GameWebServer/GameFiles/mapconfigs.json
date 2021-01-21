@@ -1,0 +1,676 @@
+[
+  {
+    "name": "Unferill",
+    "owner": "Remnant",
+    "type": "SpecialCapital",
+    "terrain": "Hills",
+    "size": 150,
+    "borders": [
+      "YellowCity2",
+      "BlueCity2",
+      "GreenCity2"
+    ]
+  },
+
+  {
+    "name": "YellowCapital",
+    "owner": "Confederation",
+    "type": "Capital",
+    "terrain": "Flat",
+    "size": 150,
+    "borders": [
+      "YellowMine1",
+      "YellowLumber1",
+      "YellowCity1",
+      "YellowFarm1"
+    ]
+  },
+
+  {
+    "name": "BlueCapital",
+    "owner": "Royalists",
+    "type": "Capital",
+    "terrain": "Hills",
+    "size": 150,
+    "borders": [
+      "BlueLumber1",
+      "BlueFarm1",
+      "BlueMine1"
+    ]
+  },
+
+  {
+    "name": "GreenCapital",
+    "owner": "Horde",
+    "type": "Capital",
+    "terrain": "Flat",
+    "size": 150,
+    "borders": [
+      "GreenLumber1",
+      "GreenMine1",
+      "GreenFarm1"
+    ]
+  },
+
+
+
+  {
+    "name": "YellowMine1",
+    "owner": "Neutral",
+    "type": "Mining",
+    "terrain": "Mountains",
+    "size": 100,
+    "borders": [
+      "YellowFarm2",
+      "YellowFort1",
+      "YellowLumber1",
+      "YellowCapital"
+    ]
+  },
+
+  {
+    "name": "YellowLumber1",
+    "owner": "Neutral",
+    "type": "Forested",
+    "terrain": "Hills",
+    "size": 100,
+    "borders": [
+      "YellowCapital",
+      "YellowCity1",
+      "YellowFort1",
+      "YellowMine1"
+    ]
+  },
+
+  {
+    "name": "YellowCity1",
+    "owner": "Neutral",
+    "type": "Urban",
+    "terrain": "Flat",
+    "size": 150,
+    "borders": [
+      "YellowFort1",
+      "YellowLumber1",
+      "YellowCapital",
+      "YellowFarm1",
+      "YellowFort2",
+      "YellowMine3"
+    ]
+  },
+  {
+    "name": "YellowFarm1",
+    "owner": "Neutral",
+    "type": "Rural",
+    "terrain": "Hills",
+    "size": 140,
+    "borders": [
+      "YellowCity1",
+      "YellowCapital",
+      "YellowMine2"
+    ]
+  },
+  {
+    "name": "YellowFarm2",
+    "owner": "Neutral",
+    "type": "Rural",
+    "terrain": "Mountain",
+    "size": 100,
+    "borders": [
+      "YellowFort1",
+      "YellowCity3",
+      "YellowMine1"
+    ]
+  },
+  {
+    "name": "YellowFort1",
+    "owner": "Neutral",
+    "type": "Fort",
+    "terrain": "Flat",
+    "size": 140,
+    "borders": [
+      "YellowCity3",
+      "YellowFarm3",
+      "YellowLumber3",
+      "YellowFarm2",
+      "YellowMine1",
+      "YellowLumber1",
+      "YellowCity1",
+      "YellowMine3"
+    ]
+  },
+  {
+    "name": "YellowMine3",
+    "owner": "Neutral",
+    "type": "Mining",
+    "terrain": "Hills",
+    "size": 100,
+    "borders": [
+      "YellowFort1",
+      "YellowCity1",
+      "YellowCity2",
+      "YellowLumber2",
+      "YellowFort2",
+      "YellowFarm3"
+    ]
+  },
+  {
+    "name": "YellowFort2",
+    "owner": "Neutral",
+    "type": "Fort",
+    "terrain": "Hills",
+    "size": 130,
+    "borders": [
+      "YellowLumber2",
+      "YellowMine2",
+      "YellowMine3",
+      "YellowCity3",
+      "YellowCity1"
+    ]
+  },
+  {
+    "name": "YellowMine2",
+    "owner": "Neutral",
+    "type": "Mining",
+    "terrain": "Flat",
+    "size": 130,
+    "borders": [
+      "YellowFort2",
+      "YellowFarm1",
+      "BlueCity3"
+    ]
+  },
+  {
+    "name": "YellowCity3",
+    "owner": "Neutral",
+    "type": "Urban",
+    "terrain": "Mountain",
+    "size": 160,
+    "borders": [
+      "GreenMine2",
+      "YellowLumber3",
+      "YellowFarm2",
+      "YellowFort1",
+      "YellowFort3"
+    ]
+  },
+  {
+    "name": "YellowFort3",
+    "owner": "Neutral",
+    "type": "Fort",
+    "terrain": "Hills",
+    "size": 80,
+    "borders": [
+      "YellowCity3",
+      "YellowLumber3"
+    ]
+  },
+  {
+    "name": "YellowLumber3",
+    "owner": "Neutral",
+    "type": "Forested",
+    "terrain": "Flat",
+    "size": 100,
+    "borders": [
+      "YellowCity3",
+      "YellowFort3",
+      "YellowFarm3",
+      "GreenLumber2",
+      "YellowFort1"
+    ]
+  },
+  {
+    "name": "YellowFarm3",
+    "owner": "Neutral",
+    "type": "Rural",
+    "terrain": "Flat",
+    "size": 100,
+    "borders": [
+      "YellowLumber3",
+      "YellowFort1",
+      "YellowMine3",
+      "YellowCity2"
+    ]
+  },
+  {
+    "name": "YellowCity2",
+    "owner": "Neutral",
+    "type": "Urban",
+    "terrain": "Flat",
+    "size": 100,
+    "borders": [
+      "Unferill",
+      "YellowFarm3",
+      "YellowMine3",
+      "YellowLumber2"
+    ]
+  },
+  {
+    "name": "YellowLumber2",
+    "owner": "Neutral",
+    "type": "Urban",
+    "terrain": "Flat",
+    "size": 100,
+    "borders": [
+      "BlueFort3",
+      "YellowFort2",
+      "YellowCity2",
+      "YellowMine3"
+    ]
+  },
+  
+
+
+  {
+    "name": "BlueLumber1",
+    "owner": "Neutral",
+    "type": "Forested",
+    "terrain": "Hills",
+    "size": 110,
+    "borders": [
+      "BlueCapital",
+      "BlueFarm1",
+      "BlueMine2",
+      "BlueCity1"
+    ]
+  },
+  {
+    "name": "BlueLumber2",
+    "owner": "Neutral",
+    "type": "Forested",
+    "terrain": "Flat",
+    "size": 100,
+    "borders": [
+      "BlueFort1",
+      "BlueFarm2",
+      "BlueCity2",
+      "BlueCity1"
+    ]
+  },
+  {
+    "name": "BlueLumber3",
+    "owner": "Neutral",
+    "type": "Forested",
+    "terrain": "Mountain",
+    "size": 100,
+    "borders": [
+      "BlueFarm3",
+      "BlueFort3",
+      "BlueCity3",
+      "BlueFarm2",
+      "BlueMine3"
+    ]
+  },
+  {
+    "name": "BlueFarm1",
+    "owner": "Neutral",
+    "type": "Rural",
+    "terrain": "Flat",
+    "size": 120,
+    "borders": [
+      "BlueCapital",
+      "BlueLumber1",
+      "BlueMine1",
+      "BlueCity1"
+    ]
+  },
+  {
+    "name": "BlueFarm2",
+    "owner": "Neutral",
+    "type": "Rural",
+    "terrain": "Mountain",
+    "size": 130,
+    "borders": [
+      "BlueCity1",
+      "BlueMine1",
+      "BlueCity3",
+      "BlueMine3",
+      "BlueLumber3",
+      "BlueFort2",
+      "BlueCity2",
+      "BlueLumber2"
+    ]
+  },
+  {
+    "name": "BlueFarm3",
+    "owner": "Neutral",
+    "type": "Rural",
+    "terrain": "Hills",
+    "size": 90,
+    "borders": [
+      "BlueFort2",
+      "BlueFort3",
+      "BlueLumber3",
+      "BlueCity2",
+      "BlueMine3"
+    ]
+  },
+  {
+    "name": "BlueMine1",
+    "owner": "Neutral",
+    "type": "Mining",
+    "terrain": "Mountain",
+    "size": 120,
+    "borders": [
+      "BlueCapital",
+      "BlueFarm1",
+      "BlueFarm2",
+      "BlueCity1"
+    ]
+  },
+  {
+    "name": "BlueMine2",
+    "owner": "Neutral",
+    "type": "Mining",
+    "terrain": "Hills",
+    "size": 110,
+    "borders": [
+      "GreenCity3",
+      "BlueLumber1",
+      "BlueFort1",
+      "BlueCity1"
+    ]
+  },
+  {
+    "name": "BlueMine3",
+    "owner": "Neutral",
+    "type": "Mining",
+    "terrain": "Flat",
+    "size": 80,
+    "borders": [
+      "BlueLumber3",
+      "BlueFort2",
+      "BlueFarm3",
+      "BlueFarm2"
+    ]
+  },
+  {
+    "name": "BlueCity1",
+    "owner": "Neutral",
+    "type": "Urban",
+    "terrain": "Hills",
+    "size": 120,
+    "borders": [
+      "BlueLumber1",
+      "BlueFarm1",
+      "BlueFarm2",
+      "BlueMine1",
+      "BlueMine2",
+      "BlueFort1",
+      "BlueLumber2"
+    ]
+  },
+  {
+    "name": "BlueCity2",
+    "owner": "Neutral",
+    "type": "Urban",
+    "terrain": "Flat",
+    "size": 100,
+    "borders": [
+      "Unferill",
+      "BlueLumber2",
+      "BlueFort2",
+      "BlueFarm3",
+      "BlueFarm2"
+    ]
+  },
+  {
+    "name": "BlueCity3",
+    "owner": "Neutral",
+    "type": "Urban",
+    "terrain": "Mountain",
+    "size": 160,
+    "borders": [
+      "YellowMine2",
+      "BlueFort3",
+      "BlueFarm3",
+      "BlueLumber3",
+      "BlueFarm2"
+    ]
+  },
+  {
+    "name": "BlueFort1",
+    "owner": "Neutral",
+    "type": "Fort",
+    "terrain": "Flat",
+    "size": 120,
+    "borders": [
+      "GreenFort3",
+      "BlueMine2",
+      "BlueCity1",
+      "BlueLumber2"
+    ]
+  },
+  {
+    "name": "BlueFort2",
+    "owner": "Neutral",
+    "type": "Fort",
+    "terrain": "Hills",
+    "size": 110,
+    "borders": [
+      "BlueCity2",
+      "BlueMine3",
+      "BlueLumber2",
+      "BlueFarm2",
+      "BlueFarm3"
+    ]
+  },
+  {
+    "name": "BlueFort3",
+    "owner": "Neutral",
+    "type": "Fort",
+    "terrain": "Mountain",
+    "size": 110,
+    "borders": [
+      "YellowLumber2",
+      "BlueCity3",
+      "BlueFarm3",
+      "BlueLumber3"
+    ]
+  },
+
+  
+
+  {
+    "name": "GreenLumber1",
+    "owner": "Neutral",
+    "type": "Forested",
+    "terrain": "Hills",
+    "size": 110,
+    "borders": [
+      "GreenCapital",
+      "GreenFarm1",
+      "GreenMine1",
+      "GreenCity1",
+      "GreenFort2"
+    ]
+  },
+  {
+    "name": "GreenLumber2",
+    "owner": "Neutral",
+    "type": "Forested",
+    "terrain": "Flat",
+    "size": 110,
+    "borders": [
+      "YellowLumber3",
+      "GreenCity2",
+      "GreenFort1",
+      "GreenCity1",
+      "GreenFort2"
+    ]
+  },
+  {
+    "name": "GreenLumber3",
+    "owner": "Neutral",
+    "type": "Forested",
+    "terrain": "Mountain",
+    "size": 100,
+    "borders": [
+      "GreenFarm2",
+      "GreenFarm3",
+      "GreenFort3",
+      "GreenCity3",
+      "GreenMine3"
+    ]
+  },
+  {
+    "name": "GreenFarm1",
+    "owner": "Neutral",
+    "type": "Rural",
+    "terrain": "Hills",
+    "size": 110,
+    "borders": [
+      "GreenCapital",
+      "GreenLumber1",
+      "GreenMine2",
+      "GreenCity1"
+    ]
+  },
+  {
+    "name": "GreenFarm2",
+    "owner": "Neutral",
+    "type": "Rural",
+    "terrain": "Mountain",
+    "size": 130,
+    "borders": [
+      "GreenCity3",
+      "GreenLumber3",
+      "GreenMine1",
+      "GreenMine3",
+      "GreenFort2"
+    ]
+  },
+  {
+    "name": "GreenFarm3",
+    "owner": "Neutral",
+    "type": "Rural",
+    "terrain": "Flat",
+    "size": 90,
+    "borders": [
+      "GreenFort3",
+      "GreenLumber3",
+      "GreenCity2",
+      "GreenMine3"
+    ]
+  },
+  {
+    "name": "GreenMine1",
+    "owner": "Neutral",
+    "type": "Mining",
+    "terrain": "Mountain",
+    "size": 90,
+    "borders": [
+      "GreenCapital",
+      "GreenLumber1",
+      "GreenFarm2"
+    ]
+  },
+  {
+    "name": "GreenMine2",
+    "owner": "Neutral",
+    "type": "Mining",
+    "terrain": "Hills",
+    "size": 110,
+    "borders": [
+      "GreenCity1",
+      "GreenFarm1",
+      "GreenFort1",
+      "YellowCity3"
+    ]
+  },
+  {
+    "name": "GreenMine3",
+    "owner": "Neutral",
+    "type": "Mining",
+    "terrain": "Flat",
+    "size": 80,
+    "borders": [
+      "GreenFarm3",
+      "GreenLumber3",
+      "GreenFort2",
+      "GreenFarm2"
+    ]
+  },
+  {
+    "name": "GreenCity1",
+    "owner": "Neutral",
+    "type": "Urban",
+    "terrain": "Hills",
+    "size": 120,
+    "borders": [
+      "GreenLumber1",
+      "GreenFarm1",
+      "GreenFort2",
+      "GreenMine2",
+      "GreenFort1",
+      "GreenLumber2"
+    ]
+  },
+  {
+    "name": "GreenCity2",
+    "owner": "Neutral",
+    "type": "Urban",
+    "terrain": "Flat",
+    "size": 90,
+    "borders": [
+      "Unferill",
+      "GreenLumber2",
+      "GreenFort2",
+      "GreenFarm3"
+    ]
+  },
+  {
+    "name": "GreenCity3",
+    "owner": "Neutral",
+    "type": "Urban",
+    "terrain": "Mountain",
+    "size": 160,
+    "borders": [
+      "BlueMine2",
+      "GreenFort3",
+      "GreenFarm3",
+      "GreenLumber3",
+      "GreenFarm2"
+    ]
+  },
+  {
+    "name": "GreenFort1",
+    "owner": "Neutral",
+    "type": "Fort",
+    "terrain": "Hills",
+    "size": 100,
+    "borders": [
+      "GreenMine2",
+      "GreenCity1",
+      "GreenLumber2"
+    ]
+  },
+  {
+    "name": "GreenFort2",
+    "owner": "Neutral",
+    "type": "Fort",
+    "terrain": "Flat",
+    "size": 120,
+    "borders": [
+      "GreenCity1",
+      "GreenCity2",
+      "GreenMine3",
+      "GreenLumber1",
+      "GreenLumber2",
+      "GreenFarm2"
+    ]
+  },
+  {
+    "name": "GreenFort3",
+    "owner": "Neutral",
+    "type": "Fort",
+    "terrain": "Mountain",
+    "size": 110,
+    "borders": [
+      "BlueFort1",
+      "GreenCity3",
+      "GreenFarm3",
+      "GreenLumber3"
+    ]
+  }
+
+]
