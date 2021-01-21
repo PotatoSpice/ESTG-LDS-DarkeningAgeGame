@@ -1,0 +1,6 @@
+.toast-position {
+    /* position: absolute; */
+    top: 70px;
+    left: 10px;
+    max-width: 350px;
+}

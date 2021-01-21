@@ -1,0 +1,37 @@
+<div class="d-block d-lg-flex">
+    <div class="pr-0 pr-lg-3" style="height: 100%;">
+        <!-- perfil simples e dados do utilizador em sessão -->
+        <div class="card profile text-light border-0">
+            <div class="card-body d-block d-sm-flex d-lg-block">
+                <img class="img-fluid border border-dark rounded profile-image" 
+                    src="../../../assets/vibing_cat02.gif" alt="Player Avatar">
+                <div class="profile-text">
+                    Player | <strong>{{player}}</strong><br>
+                    <div style="font-size: small;">More data to come in the future ...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-100 pt-4 pt-xl-0 align-self-end">
+        <!-- histórico de partidas do jogador em sessão -->
+        <app-match-history [player]="player"></app-match-history>
+    </div>
+</div>
+
+<!-- <div class="container">
+    <div class="container p-3 text-center bg-light">
+        <h2>DEV ALERT</h2>
+        <p>
+            Por implementar!
+            <!-_
+            '__(.)< (KUWABUGA)
+             \___)
+            ~~~~~~->
+        </p>
+        <div class="pb-3">
+            <img width="320" height="180" class="img-fluid" src="../../../assets/madjimbi_Fixe.gif">
+        </div>
+        <a class="btn btn-secondary btn-lg center" (click)="returnBackButton()" role="button">
+            Return Home</a>
+    </div>
+</div> -->

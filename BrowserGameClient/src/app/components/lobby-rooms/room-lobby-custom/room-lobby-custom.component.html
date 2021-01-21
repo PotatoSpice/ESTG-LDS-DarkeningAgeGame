@@ -1,0 +1,17 @@
+<div class="card-deck mb-2 mx-2" *ngIf="players">
+    <!-- [ngClass]="{ 'card-host': player.in && player.data === hostId }" --> 
+    <!-- <h6 *ngIf="player.in && player.data === hostId">Host</h6> -->
+    <div class="card bg-dark text-light pb-1 rounded border-0" *ngFor="let player of players"
+        [ngClass]="{ 'card-you': player.in && player.data === sessionId }">
+        <img *ngIf="player.in" src="../../../assets/madjimbi_Fixe.gif" alt="Player Avatar" class="card-img-top">
+        <div class="card-body text-center d-flex flex-column">
+            <i *ngIf="!player.in" class="fa fa-plus fa-5x mt-auto" aria-hidden="true"></i>
+            <h5 *ngIf="player.in" class="card-title mt-auto">{{ player.data }}</h5>
+            <h6 *ngIf="player.in && player.data === sessionId">You</h6>
+        </div>
+    </div>
+</div> 
+
+<button (click)="startGame()" type="button" class="btn btn-secondary m-1">
+    Start Game
+</button>

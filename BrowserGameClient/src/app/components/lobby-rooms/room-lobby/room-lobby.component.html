@@ -1,0 +1,33 @@
+<div *ngIf="connected" class="d-block d-md-flex">
+    <div class="w-100 pr-md-3"><div class="clearfix d-flex-collumn text-center">
+        <router-outlet></router-outlet>
+        
+        <button (click)="leaveLobby()" type="button" class="btn btn-secondary m-1">
+            Leave Lobby
+        </button>
+        
+        <div class="row mt-1"><div class="col-12 col-sm-8 offset-sm-2">
+            <app-chat-window [messages]="messages" (message)="onMessage($event)"></app-chat-window>
+        </div></div>
+    </div></div>
+    <!-- lista de amigos (à direita só para md-up, abaixo para md-down -->
+    <div class="mt-2 mt-md-0">
+        <app-friend-list></app-friend-list>
+    </div>
+</div>
+
+<div *ngIf="!connected" class="row"><div class="col-6 offset-3 py-2">
+    <div *ngIf="!connError" class="card card-body text-center py-4 jumbo-primary">
+        <div class="d-inline">
+            <span class="align-middle spinner-border text-dark text-center"></span>
+            <span class="align-middle text-monospace pl-4">Loading room data ...</span>
+        </div>
+    </div>
+    <div *ngIf="connError" class="card card-body text-center py-4 jumbo-primary">
+        <div class="d-inline mx-auto">
+            <span class="align-middle text-monospace pr-2">Couldn't connect to server ...</span>
+            <button class="btn btn-secondary" [routerLink]="['session', 'hub']" role="button">
+                Redirect To Session Page</button>
+        </div>
+    </div>
+</div></div>

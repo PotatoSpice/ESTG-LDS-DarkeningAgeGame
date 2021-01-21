@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0">
+        <a class="navbar-brand mr-auto" routerLink=''>
+            <img src="../../../assets/LDS_logo.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            Home
+        </a>
+    </div>
+
+    <div class="mx-auto order-0">
+        <a class="navbar-brand custom-font mx-auto" routerLink=''>Darkening Age</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul *ngIf="userInSession" class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" role="button" 
+                placement="bottom" [autoClose]="'outside'"
+                [ngbPopover]="addFriendPop" [popoverTitle]="addFriendPopTitle">
+                <i class="fa fa-user-plus" aria-hidden="true"></i> Add Friend
+            </a></li>
+            <li class="nav-item"><a class="nav-link" (click)="signOut()" role="button">
+                <i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out
+            </a></li>
+        </ul>
+    </div>
+</nav>
+<main class="container-fluid">
+    <router-outlet></router-outlet>
+</main>
+<footer class="my-2 mx-5">
+    <div class="card bg-dark-clear text-light">
+        <div class="card-body text-center">© Grupo 15 2020</div>
+    </div>
+</footer>
+
+<!-- Friend Request Popover -->
+<ng-template #addFriendPopTitle>
+    <div class="bg-grey-clear text-light py-1 px-2 border-bottom border-dark">
+        <div class="text-monospace">New Friend Request</div>
+    </div>
+</ng-template>
+<ng-template #addFriendPop>
+    <div class="bg-grey-clear p-1 d-flex">
+        <div class="input-group">
+            <input type="text" class="form-control form-control-sm list-item-dark border-0 text-light" 
+            [formControl]="friendForm" id="friend-name" placeholder="Player name">
+            <div class="input-group-append">
+                <button type="button" class="btn btn-dark-clear btn-sm ml-1" (click)="sendFriendRequest()"
+                    triggers="click:blur" placement="bottom" container="body" 
+                    [openDelay]="1000" [closeDelay]="500" ngbTooltip="{{sendNotification}}"
+                    #addFriendTooltip="ngbTooltip">
+                    Add Friend</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

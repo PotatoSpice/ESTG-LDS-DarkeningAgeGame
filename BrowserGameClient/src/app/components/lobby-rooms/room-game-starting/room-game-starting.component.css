@@ -1,0 +1,25 @@
+.card-faction-royalists {
+    background-color: rgb(0, 0, 139, 0.9);
+}
+.card-faction-remnant {
+    background-color: rgb(139, 0, 0, 0.9);
+}
+.card-faction-horde {
+    background-color: rgb(0, 100, 0, 0.9);
+}
+.card-faction-confederation {
+    background-color: rgb(184, 134, 11, 0.9);
+}
+
+.timer {
+    font-size: 1.1em;
+    letter-spacing: -1px;
+    height: 100%;
+    font-size: xx-large;
+    background-image: url('../../../../assets/UIWood_4x.png'); 
+    background-size: 100% 100%;
+}
+.timer span {
+    font-size: 1.4em;
+    margin: 0 3px 0 3px;
+}

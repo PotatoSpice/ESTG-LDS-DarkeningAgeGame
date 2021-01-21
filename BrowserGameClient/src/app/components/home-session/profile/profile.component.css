@@ -1,0 +1,59 @@
+.profile {
+    background-image: url('../../../../assets/UIWood_4x.png'); 
+    background-size: 100% 100%; 
+    text-align: center;
+    background-color: transparent;
+    width: 20rem;
+}
+
+.profile .profile-image {
+    height: 12rem;
+    margin-top: 1.5rem;
+}
+
+.profile .profile-text {
+    padding-left: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: xx-large;
+}
+
+@media (max-width: 992px) {
+    .profile {
+        background-image: url('../../../../assets/UIWood_4x_ultrawide.png');
+        text-align: justify;
+    }
+
+    .profile .profile-image {
+        height: 12rem;
+        margin-left: 3rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .profile {
+        background-image: url('../../../../assets/UIWood_4x_wide.png');
+        width: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile {
+        text-align: center;
+        width: auto;
+    }
+
+    .profile .profile-image {
+        height: 10rem;
+        margin-left: 0;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .profile .profile-text {
+        padding-left: 0rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+}

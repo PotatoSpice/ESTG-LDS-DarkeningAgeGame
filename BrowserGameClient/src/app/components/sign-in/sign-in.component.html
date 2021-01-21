@@ -1,0 +1,129 @@
+<div class="container-fluid"><div class="row"><div class="col-12 col-md-8 col-xl-6 offset-md-2 offset-xl-3">
+    <div class="card" style="background-color: rgba(248, 248, 248, 0.75)">
+        <div class="card-body px-5 pt-5 pb-0">
+            <h1 class="text-center">Sign In</h1>
+            <hr class="colorgraph">
+
+            <form #signInForm="ngForm" (ngSubmit)="signInForm.form.valid && signIn(signInForm)">
+                <div class="form-row"><div class="col-xs-12 col-md-10 offset-md-1">
+                    <!-- Username -->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-dark text-light">
+                                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <input class="form-control input-lg" type="text" name="username"
+                                [(ngModel)]="player.username" #username="ngModel" placeholder="Username" 
+                                [ngClass]="{ 'is-invalid': signInForm.submitted && username.invalid }"
+                                required>
+                            <div class="invalid-feedback" 
+                                *ngIf="signInForm.submitted && username.invalid && username.errors">
+                                <p *ngIf="username && username.errors.required">Username is required</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Password -->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-dark text-light">
+                                    <i class="fa fa-unlock-alt fa-lg" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <input class="form-control input-lg" type="password" name="password"
+                                [(ngModel)]="player.password" #password="ngModel" placeholder="Password"
+                                [ngClass]="{ 'is-invalid': signInForm.submitted && password.invalid }"
+                                minlength="6" required>
+                            <div class="invalid-feedback" 
+                                *ngIf="signInForm.submitted && password.invalid && password.errors">
+                                <div *ngIf="password.errors.required">Password is required</div>
+                                <div *ngIf="password.errors.minlength">Password should be at least 6 characters long</div>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+
+                <!-- <div class="form-group text-center">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="rememberMe">
+                        <label class="custom-control-label" for="rememberMe">Remember me</label>
+                    </div>
+                </div> -->
+                
+                <div class="form-row">
+                    <div class="col-xs-12 col-md-4 offset-md-4">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-secondary btn-block btn-lg">
+                                <span *ngIf="awaitingResponse" class="spinner-border text-light text-center"></span>
+                                <span *ngIf="!awaitingResponse">Login</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="info" class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>Hey! </strong>{{info}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div *ngIf="warnings" class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Oops! </strong>{{warnings}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+    
+                <div *ngIf="alerts" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Warning! </strong>{{alerts}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <!-- <div class="form-group text-center">
+                    <div class="social-network social-circle">
+                        <a class="icoGoogle mx-2" title="Google +" role="button"><i class="fa fa-google fa-3x"></i></a>
+                    </div>
+                </div> -->
+            </form>
+        </div>
+        <div class="card-footer d-flex px-5" style="background-color: rgb(128, 128, 128, 0.5)">
+            <a class="card-link text-dark mr-2" (click)="returnBackButton()" role="button">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </a>
+            <div class="mr-auto">
+                <div>Forgot your password?</div>
+                <a class="card-link text-decoration-none text-secondary" role="button"
+                    [autoClose]="'outside'" placement="bottom" container="body" 
+                    [ngbPopover]="forgotPwPop" [popoverTitle]="forgotPwTitle">
+                    Click here</a>
+            </div>
+            <div class="ml-auto">
+                <button (click)="redirectSignUp()" class="btn btn-light btn-lg">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div></div></div>
+
+<!-- Forgot Password Popover -->
+<ng-template #forgotPwTitle>
+    <div class="bg-grey-clear text-light py-1 px-2 border-bottom border-dark">
+        <div class="text-monospace">Enter your email</div>
+    </div>
+</ng-template>
+<ng-template #forgotPwPop>
+    <div class="bg-grey-clear p-1 d-flex">
+        <div class="input-group">
+            <input type="email" class="form-control form-control-sm list-item-dark border-0 text-light" 
+                [formControl]="emailForm" id="email-address" placeholder="Email address" required>
+            <div class="input-group-append">
+                <button type="button" class="btn btn-dark-clear btn-sm ml-1" (click)="forgotPassword()">
+                    Send</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

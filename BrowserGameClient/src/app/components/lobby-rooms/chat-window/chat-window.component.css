@@ -1,0 +1,29 @@
+.card-body {
+    display: flex;
+    flex-direction: column-reverse !important;
+}
+
+.chat-body {
+    position: relative;
+    font-size: small;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.chat-body .header {
+    border-top: 1px solid darkslategrey;
+}
+
+.chat-body p {
+    margin: 0;
+}
+
+a:hover, a:active, a:focus {
+    text-decoration: none;
+    outline: 0;
+}
+
+small, .small {
+    font-size: 85%;
+}

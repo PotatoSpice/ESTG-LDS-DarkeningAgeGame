@@ -1,0 +1,11 @@
+.resp-chat-with-float-buttons {
+    float: right;
+    width: 100%; 
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .resp-chat-with-float-buttons {
+        float: none;
+    }
+}

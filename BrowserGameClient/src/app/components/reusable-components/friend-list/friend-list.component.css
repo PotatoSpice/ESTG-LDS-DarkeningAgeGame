@@ -1,0 +1,49 @@
+#friendList {
+    width: 20rem;
+}
+
+@media (max-width: 1200px) {
+    #friendList {
+        width: 14rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #friendList {
+        width: auto;
+    }
+}
+
+.dropdown-item:hover {
+    background-color: #e9e9e9e6 !important;
+}
+.dropdown-item:active {
+    background-color: #757575e6 !important;
+}
+
+.toggle-list {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.toggle-list strong {
+    display: none;
+}
+
+.toggle-list.collapsed strong {
+    display: block;
+}
+
+.toggle-list.collapsed div {
+    display: none;
+}
+
+.toggle-list.collapsed {
+    height: 10%;
+    float: right;
+}
+
+/* .toggle-list.collapsed:hover {
+    right: 0;
+} */
