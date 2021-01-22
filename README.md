@@ -24,7 +24,7 @@
 
 # Organização do Repositório
 
-- Visto no diagrama abaixo e tendo em conta que as várias aplicações desenvolvidas estão num repositório único, existirá para cada componente do projeto um GIT [Orphan Branche](https://www.git-scm.com/docs/git-checkout#Documentation/git-checkout.txt---orphanltnewbranchgt). 
+- Visto no diagrama abaixo e tendo em conta que as várias aplicações desenvolvidas estão num repositório único, existirá para cada aplicação um [GIT Orphan Branch](https://www.git-scm.com/docs/git-checkout#Documentation/git-checkout.txt---orphanltnewbranchgt). 
 
 - Isto é, existe um branch para a API, para o *Game Client* no browser, para a GUI do jogo em Unity e outro para o servidor dedicado do jogo.
 
